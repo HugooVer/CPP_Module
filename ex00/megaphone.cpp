@@ -6,7 +6,7 @@
 /*   By: hvercell <hvercell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 16:13:59 by hvercell          #+#    #+#             */
-/*   Updated: 2023/12/18 17:10:35 by hvercell         ###   ########.fr       */
+/*   Updated: 2023/12/18 20:23:25 by hvercell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,22 +18,18 @@
 
 static std::string	toUpperString(std::string str)
 {
+	std::locale loc;
 	for (size_t i(0); i < str.length(); ++i)
-		str[i] = toupper(str[i]);
+		str[i] = toupper(str[i], loc);
 	return (str);
 }
 
 int main(int ac, char **av)
 {
-	--ac;
-	++av;
-	if (ac == 0)
+	if (ac <= 1)
 		std::cout << NO_ARG;
-	for (int i = 0; i < ac; ++i)
-	{
-		std::string	arg(av[i]);
-		std::cout << toUpperString(arg);
-	}
+	for (int i = 1; i < ac; ++i)
+		std::cout << toUpperString(std::string(av[i]));
 	std::cout << std::endl;
 	return (EXIT_SUCCESS);
 }
