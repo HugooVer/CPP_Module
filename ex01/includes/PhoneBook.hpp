@@ -1,16 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hvercell <hvercell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/18 19:03:27 by hvercell          #+#    #+#             */
-/*   Updated: 2024/01/05 17:40:56 by hvercell         ###   ########.fr       */
+/*   Created: 2024/01/05 17:55:08 by hvercell          #+#    #+#             */
+/*   Updated: 2024/01/05 18:33:04 by hvercell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int main()
-{
-	return 1;
-}
+#include "Contact.hpp"
+
+class PhoneBook {
+private:
+	Contact contact[9];
+
+public:
+	int	nb_contact;
+
+	PhoneBook(void);
+	~PhoneBook(void);
+
+	void	run(void);
+	int		AddContact(int idx);
+	void	search(void);
+
+};

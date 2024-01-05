@@ -9,7 +9,7 @@ CXXFLAGS += -std=c++98
 SRCS_PATH = srcs/
 
 SRCS += main.cpp
-# SRCS += contact.cpp
+# SRCS += Contact.cpp
 
 vpath %.cpp ${SRCS_PATH}
 
