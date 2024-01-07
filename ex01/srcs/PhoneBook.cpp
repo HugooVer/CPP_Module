@@ -6,7 +6,7 @@
 /*   By: hvercell <hvercell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 18:24:37 by hvercell          #+#    #+#             */
-/*   Updated: 2024/01/05 18:41:21 by hvercell         ###   ########.fr       */
+/*   Updated: 2024/01/07 16:36:25 by hvercell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,20 +30,10 @@ void	PhoneBook::run(void)
 
 int	PhoneBook::AddContact(int idx)
 {
-	
-}
-
-int	PhoneBook::AddContact(int index)
-{
-	if (this->contact[8].setFirstName() == SUCCESS)
-		if (this->contact[8].setLastName() == SUCCESS)
-			if (this->contact[8].setNickname() == SUCCESS)
-				if (this->contact[8].setPhoneNumber() == SUCCESS)
-					if (this->contact[8].setDarkestSecret() == SUCCESS)
-					{
-						this->contact[index] = this->contact[8];
-						return (SUCCESS);
-					}
-	std::cout << "Please, complete all fields.\n";
-	return (EMPTY);
+	while (this->contact[idx].setFirstName() != SUCCESS)
+		while (this->contact[idx].setLastName() != SUCCESS)
+			while (this->contact[idx].setNickname() != SUCCESS)
+				while (this->contact[idx].setPhoneNumber() != SUCCESS)
+					while (this->contact[idx].setDarkestSecret() != SUCCESS)
+	return (SUCCESS);
 }
