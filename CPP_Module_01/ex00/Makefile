@@ -18,7 +18,6 @@ vpath %.cpp ${SRCS_PATH}
 INCLUDES	= includes/
 
 HEADERS	+= Zombie.hpp
-HEADERS	+= Utiles.hpp
 
 vpath %.hpp ${INCLUDES}
 
