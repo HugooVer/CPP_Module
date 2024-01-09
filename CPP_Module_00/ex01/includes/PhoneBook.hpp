@@ -1,39 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hvercell <hvercell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/18 19:03:09 by hvercell          #+#    #+#             */
-/*   Updated: 2024/01/05 18:17:25 by hvercell         ###   ########.fr       */
+/*   Created: 2024/01/05 17:55:08 by hvercell          #+#    #+#             */
+/*   Updated: 2024/01/07 21:07:05 by hvercell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Contact.hpp"
 #include "Utiles.hpp"
 
-class Contact {
+class PhoneBook {
+private:
+	Contact contacts[8];
 
-	private:
+public:
+	int	nb_contact;
 
-		std::string	FirstName;
-		std::string LastName;
-		std::string Nickname;
-		std::string PhoneNumber;
-		std::string DarkestSecret;
+	PhoneBook(void);
+	~PhoneBook(void);
 
-	public:
+	void	run(void);
+	int		AddContact(int idx);
+	void	search(void);
 
-		Contact(void);
-		~Contact(void);
-
-		int		setFirstName();
-		int		setLastName();
-		int		setNickname();
-		int		setPhoneNumber();
-		int		setDarkestSecret();
-
-		void	displayContactInfo();
-		void	displayRepertory(int Index);
-		void	printInfoFormatRepertory(std::string str);
 };

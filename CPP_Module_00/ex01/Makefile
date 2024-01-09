@@ -9,14 +9,16 @@ CXXFLAGS += -std=c++98
 SRCS_PATH = srcs/
 
 SRCS += main.cpp
-# SRCS += Contact.cpp
+SRCS += Contact.cpp
+SRCS += PhoneBook.cpp
 
 vpath %.cpp ${SRCS_PATH}
 
 INCLUDES	= includes/
 
-# HEADERS	+= contact.hpp
-# HEADERS	+= utiles.hpp
+HEADERS	+= Contact.hpp
+HEADERS += PhoneBook.hpp
+HEADERS	+= utiles.hpp
 
 vpath %.hpp ${INCLUDES}
 

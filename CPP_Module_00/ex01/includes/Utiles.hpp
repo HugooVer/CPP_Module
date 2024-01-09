@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Utiles.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hvercell <hvercell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/05 17:55:08 by hvercell          #+#    #+#             */
-/*   Updated: 2024/01/05 18:33:04 by hvercell         ###   ########.fr       */
+/*   Created: 2023/12/18 19:03:07 by hvercell          #+#    #+#             */
+/*   Updated: 2024/01/07 22:08:26 by hvercell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contact.hpp"
+#define INVALID -1
+#define EMPTY -2
+#define SUCCESS 1
 
-class PhoneBook {
-private:
-	Contact contact[9];
+#define ADD "ADD"
+#define SEARCH "SEARCH"
+#define EXIT "EXIT"
 
-public:
-	int	nb_contact;
-
-	PhoneBook(void);
-	~PhoneBook(void);
-
-	void	run(void);
-	int		AddContact(int idx);
-	void	search(void);
-
-};
+#include <iostream>
+#include <string>
+#include <cstdlib>
+#include <iomanip>
+#include <sstream>
