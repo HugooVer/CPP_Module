@@ -6,7 +6,7 @@
 /*   By: hvercell <hvercell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 16:13:59 by hvercell          #+#    #+#             */
-/*   Updated: 2023/12/22 16:56:53 by hvercell         ###   ########.fr       */
+/*   Updated: 2024/01/09 19:12:58 by hvercell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 static std::string	toUpperString(std::string str)
 {
 	std::locale loc;
-	for (size_t i(0); i < str.length(); ++i)
+	for (int i = 0; i < str.length(); ++i)
 		str[i] = toupper(str[i], loc);
 	return (str);
 }
