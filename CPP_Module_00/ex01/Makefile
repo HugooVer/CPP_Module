@@ -18,7 +18,7 @@ INCLUDES	= includes/
 
 HEADERS	+= Contact.hpp
 HEADERS += PhoneBook.hpp
-HEADERS	+= utiles.hpp
+HEADERS	+= Utiles.hpp
 
 vpath %.hpp ${INCLUDES}
 
