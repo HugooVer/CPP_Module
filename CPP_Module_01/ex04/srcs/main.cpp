@@ -35,6 +35,8 @@ int main(int argc, char *argv[])
 		i = line.find(look);
 		while (i != std::string::npos)
 		{
+			if(look.length() <= 0)
+				break;
 			line.erase(i, look.length());
 			line.insert(i, add);
 			i = line.find(look, ++i);
