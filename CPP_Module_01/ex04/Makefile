@@ -9,27 +9,16 @@ CXXFLAGS += -std=c++98
 SRCS_PATH = srcs/
 
 SRCS += main.cpp
-SRCS += 
 
 vpath %.cpp ${SRCS_PATH}
-
-INCLUDES	= includes/
-
-HEADERS	+= 
-
-vpath %.hpp ${INCLUDES}
 
 OBJS_PATH = objs
 OBJS = ${patsubst %.cpp, ${OBJS_PATH}/%.o, ${SRCS}}
 
 all: ${NAME}
 
-${NAME}: ${OBJS}
-	${CXX} ${CXXFLAGS} ${OBJS} -o ${NAME}
-
-${OBJS}: ${OBJS_PATH}/%.o: %.cpp Makefile ${INCLUDES}
-	mkdir -p ${OBJS_PATH}
-	${CXX} ${CXXFLAGS} -c $< -o $@ -I ${INCLUDES}
+${NAME}: ${SRCS}
+	${CXX} ${CXXFLAGS} ${SRCS} -o ${NAME}
 
 clean:
 	${RM} -r ${OBJS_PATH}
