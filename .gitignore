@@ -33,9 +33,12 @@
 
 .vscode/
 
+*.replace
+
 megaphone
 phonebook
 zombie
 zombies
 brain
 violence
+my_sed
