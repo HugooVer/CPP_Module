@@ -9,13 +9,13 @@ CXXFLAGS += -std=c++98
 SRCS_PATH = srcs/
 
 SRCS += main.cpp
-SRCS += 
+SRCS += Harl.cpp
 
 vpath %.cpp ${SRCS_PATH}
 
 INCLUDES	= includes/
 
-HEADERS	+= 
+HEADERS	+= Harl.hpp
 
 vpath %.hpp ${INCLUDES}
 
