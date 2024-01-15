@@ -2,6 +2,7 @@
 #pragma once
 
 #include <iostream>
+#include <cmath>
 
 class Fixed
 {
@@ -17,11 +18,12 @@ class Fixed
 		~Fixed();
 
 		Fixed& operator= (Fixed const &fixed);
-		Fixed& operator<< (Fixed const &fixed);
 
 		int getRawBits() const;
 		void setRawBits(int const raw);
-		float toFloat( void ) const;
-		int toInt( void ) const;
+		int toInt() const;
+		float toFloat() const;
 
 };
+
+std::ostream &operator<< (std::ostream &os, Fixed const &fixed);
