@@ -19,22 +19,22 @@ class Fixed
 
 		Fixed& operator= (Fixed const &fixed);
 
-		inline bool operator>(const Fixed &nb) const {return (this->toFloat() > nb.toFloat());}
-		inline bool operator<(const Fixed &nb) const {return (this->toFloat() < nb.toFloat());}
-		inline bool operator>=(const Fixed &nb) const {return (this->toFloat() >= nb.toFloat());}
-		inline bool operator<=(const Fixed &nb) const {return (this->toFloat() <= nb.toFloat());}
-		inline bool operator==(const Fixed &nb) const {return (this->toFloat() == nb.toFloat());}
-		inline bool operator!=(const Fixed &nb) const {return (this->toFloat() != nb.toFloat());}
+		inline bool operator>(const Fixed &nb) const;
+		inline bool operator<(const Fixed &nb) const;
+		inline bool operator>=(const Fixed &nb) const;
+		inline bool operator<=(const Fixed &nb) const;
+		inline bool operator==(const Fixed &nb) const;
+		inline bool operator!=(const Fixed &nb) const;
 
-		inline Fixed operator+(const Fixed &nb) {Fixed tm(this->toFloat() + nb.toFloat()); return (tm);}
-		inline Fixed operator-(const Fixed &nb) {Fixed tm(this->toFloat() - nb.toFloat()); return (tm);}
-		inline Fixed operator*(const Fixed &nb) {Fixed tm(this->toFloat() * nb.toFloat()); return (tm);}
-		inline Fixed operator/(const Fixed &nb) {Fixed tm(this->toFloat() / nb.toFloat()); return (tm);}
+		inline Fixed operator+(const Fixed &nb);
+		inline Fixed operator-(const Fixed &nb);
+		inline Fixed operator*(const Fixed &nb);
+		inline Fixed operator/(const Fixed &nb);
 
-		inline Fixed& operator++() {++_value; return *this;} // pre
-		inline Fixed& operator--() {--_value; return *this;} // pre
-		inline Fixed operator++(int) {Fixed old(*this); ++_value; return old;} // post
-		inline Fixed operator--(int) {Fixed old(*this); --_value; return old;} // post
+		inline Fixed& operator++(); // pre
+		inline Fixed& operator--(); // pre
+		inline Fixed operator++(int); // post
+		inline Fixed operator--(int); // post
 
 		static Fixed& max(Fixed &nb, Fixed &nb0);
 		static const Fixed& max(const Fixed &nb, const Fixed &nb0);
