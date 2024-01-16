@@ -4,35 +4,30 @@
 Fixed::Fixed()
 {
 	_value = 0;
-	// std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed(Fixed const &fixed)
 {
 	_value = fixed.getRawBits();
-	// std::cout << "Copy constructor called" << std::endl;
 }
 
 Fixed::Fixed(const int value)
 {
 	_value = value << _bits;
-	// std::cout << "Int constructor called" << std::endl;
 }
 
 Fixed::Fixed(const float value)
 {
 	_value = roundf(value * (1 << _bits));
-	// std::cout << "Float constructor called" << std::endl;
 }
 
 Fixed::~Fixed()
 {
-	// std::cout << "Destructor called" << std::endl;
+	;
 }
 
 Fixed& Fixed::operator= (Fixed const &fixed)
 {
-	// std::cout << "Copy assignment operator called" << std::endl;
 	_value = fixed.getRawBits();
 	return *this;
 }
@@ -41,6 +36,34 @@ std::ostream &operator<< (std::ostream &os, Fixed const &fixed)
 {
 	os << fixed.toFloat();
 	return os;
+}
+
+Fixed& Fixed::max(Fixed &nb, Fixed &nb0)
+{
+	if (nb > nb0)
+		return nb;
+	return nb0;
+}
+
+const Fixed& Fixed::max(const Fixed &nb, const Fixed &nb0)
+{
+	if (nb > nb0)
+		return nb;
+	return nb0;
+}
+
+Fixed& Fixed::min(Fixed &nb, Fixed &nb0)
+{
+		if (nb > nb0)
+		return nb0;
+	return nb;
+}
+
+const Fixed& Fixed::min(const Fixed &nb, const Fixed &nb0)
+{
+	if (nb > nb0)
+		return nb0;
+	return nb;
 }
 
 int Fixed::getRawBits() const

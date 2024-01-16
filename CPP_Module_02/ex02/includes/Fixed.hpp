@@ -33,10 +33,13 @@ class Fixed
 
 		inline Fixed& operator++() {++_value; return *this;} // pre
 		inline Fixed& operator--() {--_value; return *this;} // pre
-		inline Fixed operator++(int nb) {Fixed old(*this); ++_value; return old;} // post
-		inline Fixed operator--(int nb) {Fixed old(*this); --_value; return old;} // post
+		inline Fixed operator++(int) {Fixed old(*this); ++_value; return old;} // post
+		inline Fixed operator--(int) {Fixed old(*this); --_value; return old;} // post
 
-		
+		static Fixed& max(Fixed &nb, Fixed &nb0);
+		static const Fixed& max(const Fixed &nb, const Fixed &nb0);
+		static Fixed& min(Fixed &nb, Fixed &nb0);
+		static const Fixed& min(const Fixed &nb, const Fixed &nb0);
 
 		int getRawBits() const;
 		void setRawBits(int const raw);
