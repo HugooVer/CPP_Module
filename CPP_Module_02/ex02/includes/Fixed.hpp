@@ -19,22 +19,22 @@ class Fixed
 
 		Fixed& operator= (Fixed const &fixed);
 
-		inline bool operator>(const Fixed &nb) const;
-		inline bool operator<(const Fixed &nb) const;
-		inline bool operator>=(const Fixed &nb) const;
-		inline bool operator<=(const Fixed &nb) const;
-		inline bool operator==(const Fixed &nb) const;
-		inline bool operator!=(const Fixed &nb) const;
+		bool operator>(const Fixed &nb) const;
+		bool operator<(const Fixed &nb) const;
+		bool operator>=(const Fixed &nb) const;
+		bool operator<=(const Fixed &nb) const;
+		bool operator==(const Fixed &nb) const;
+		bool operator!=(const Fixed &nb) const;
 
-		inline Fixed operator+(const Fixed &nb);
-		inline Fixed operator-(const Fixed &nb);
-		inline Fixed operator*(const Fixed &nb);
-		inline Fixed operator/(const Fixed &nb);
+		Fixed operator+(const Fixed &nb);
+		Fixed operator-(const Fixed &nb);
+		Fixed operator*(const Fixed &nb);
+		Fixed operator/(const Fixed &nb);
 
-		inline Fixed& operator++(); // pre
-		inline Fixed& operator--(); // pre
-		inline Fixed operator++(int); // post
-		inline Fixed operator--(int); // post
+		Fixed& operator++(); // pre
+		Fixed& operator--(); // pre
+		Fixed operator++(int); // post
+		Fixed operator--(int); // post
 
 		static Fixed& max(Fixed &nb, Fixed &nb0);
 		static const Fixed& max(const Fixed &nb, const Fixed &nb0);

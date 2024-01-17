@@ -29,69 +29,69 @@ Fixed& Fixed::operator= (Fixed const &fixed)
 	return *this;
 }
 
-inline bool Fixed::operator>(const Fixed &nb) const
+bool Fixed::operator>(const Fixed &nb) const
 {
 	return (this->toFloat() > nb.toFloat());
 }
-inline bool Fixed::operator<(const Fixed &nb) const
+bool Fixed::operator<(const Fixed &nb) const
 {
 	return (this->toFloat() < nb.toFloat());
 }
-inline bool Fixed::operator>=(const Fixed &nb) const
+bool Fixed::operator>=(const Fixed &nb) const
 {
 	return (this->toFloat() >= nb.toFloat());
 }
-inline bool Fixed::operator<=(const Fixed &nb) const
+bool Fixed::operator<=(const Fixed &nb) const
 {
 	return (this->toFloat() <= nb.toFloat());
 }
-inline bool Fixed::operator==(const Fixed &nb) const
+bool Fixed::operator==(const Fixed &nb) const
 {
 	return (this->toFloat() == nb.toFloat());
 }
-inline bool Fixed::operator!=(const Fixed &nb) const
+bool Fixed::operator!=(const Fixed &nb) const
 {
 	return (this->toFloat() != nb.toFloat());
 }
 
-inline Fixed Fixed::operator+(const Fixed &nb)
+Fixed Fixed::operator+(const Fixed &nb)
 {
 	Fixed tm(this->toFloat() + nb.toFloat());
 	return (tm);
 }
-inline Fixed Fixed::operator-(const Fixed &nb)
+Fixed Fixed::operator-(const Fixed &nb)
 {
 	Fixed tm(this->toFloat() - nb.toFloat());
 	return (tm);
 }
-inline Fixed Fixed::operator*(const Fixed &nb)
+Fixed Fixed::operator*(const Fixed &nb)
 {
 	Fixed tm(this->toFloat() * nb.toFloat());
 	return (tm);
 }
-inline Fixed Fixed::operator/(const Fixed &nb)
+Fixed Fixed::operator/(const Fixed &nb)
 {
 	Fixed tm(this->toFloat() / nb.toFloat());
 	return (tm);
 }
 
-inline Fixed& Fixed::operator++() // pre
+Fixed& Fixed::operator++() // pre
 {
 	++_value;
 	return *this;
 }
-inline Fixed& Fixed::operator--() // pre
+Fixed& Fixed::operator--() // pre
 {
 	--_value;
 	return *this;
 }
-inline Fixed Fixed::operator++(int) // post
+Fixed Fixed::operator++(int) // post
 {
 	Fixed old(*this);
 	++_value;
 	return old;
 }
-inline Fixed Fixed::operator--(int) // post
+Fixed Fixed::operator--(int) // post
 {
 	Fixed old(*this);
 	--_value;
