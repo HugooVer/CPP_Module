@@ -18,6 +18,8 @@ public:
 	ClapTrap(ClapTrap const &clapTrap);
 	~ClapTrap();
 
+	ClapTrap& operator= (ClapTrap const &claptrap);
+
 	void attack(const std::string& target);
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
