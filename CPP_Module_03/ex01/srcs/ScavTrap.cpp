@@ -3,13 +3,16 @@
 
 ScavTrap::ScavTrap() : ClapTrap()
 {
+	_hp = 100;
+	_energy = 50;
+	_damage = 20;
 	std::cout << "ScavTrap default constructor called" << std::endl;
 }
 ScavTrap::ScavTrap(std::string name) : ClapTrap (name)
 {
 	_hp = 100;
 	_energy = 50;
-	this->_damage = 20;
+	_damage = 20;
 	std::cout << "ScavTrap constructor called" << std::endl;
 }
 ScavTrap::ScavTrap(ScavTrap const &scavtrap)
