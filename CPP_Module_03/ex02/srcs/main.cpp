@@ -30,6 +30,13 @@ int	main()
 	box.attack("some creatures");
 	box.beRepaired(5);
 	box.takeDamage(5);
-	
+
+	std::cout << "--------------------------------" << std::endl;
+
+	FragTrap cp("cpy");
+	cp.beRepaired(1);
+	FragTrap cpy(cp);
+	cpy.beRepaired(1);
+
 	return (EXIT_SUCCESS);
 }

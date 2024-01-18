@@ -19,6 +19,13 @@ int	main()
 	box.attack("some creatures");
 	box.beRepaired(5);
 	box.takeDamage(5);
+
+	std::cout << "--------------------------------" << std::endl;
+
+	ScavTrap cp("cpy");
+	cp.beRepaired(1);
+	ScavTrap cpy(cp);
+	cpy.beRepaired(1);
 	
 	return (EXIT_SUCCESS);
 }

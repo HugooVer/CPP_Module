@@ -2,8 +2,8 @@
 
 int	main()
 {
-	ClapTrap	bot("Box");
-	ClapTrap	bo("Bo");
+	ClapTrap bot("Box");
+	ClapTrap bo("Bo");
 
 	bot.attack("some creatures");
 	bot.attack("some creatures");
@@ -21,7 +21,13 @@ int	main()
 	bot.takeDamage(20);
 	bot.beRepaired(5);
 	bot.beRepaired(5);
-	bot.attack("void");
-	
+
+	std::cout << "--------------------------------" << std::endl;
+
+	ClapTrap cp("cpy");
+	cp.beRepaired(1);
+	ClapTrap cpy(cp);
+	cpy.beRepaired(1);
+
 	return (EXIT_SUCCESS);
 }
