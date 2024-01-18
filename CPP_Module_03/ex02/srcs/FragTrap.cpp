@@ -25,6 +25,15 @@ FragTrap::~FragTrap()
 	std::cout  << std::endl << "FragTrap Destructor called";
 }
 
+FragTrap& FragTrap::operator= (FragTrap const &fragtrap)
+{
+	_name = fragtrap._name;
+	_hp = fragtrap._hp;
+	_energy = fragtrap._energy;
+	_damage = fragtrap._damage;
+	return *this;
+}
+
 void FragTrap::highFivesGuys()
 {
 	std::cout << std::endl << "High fives !!" << std::endl << std::endl;

@@ -22,6 +22,15 @@ ScavTrap::~ScavTrap()
 	std::cout  << std::endl << "ScavTrap Destructor called";
 }
 
+ScavTrap& ScavTrap::operator= (ScavTrap const &scavtrap)
+{
+	_name = scavtrap._name;
+	_hp = scavtrap._hp;
+	_energy = scavtrap._energy;
+	_damage = scavtrap._damage;
+	return *this;
+}
+
 void ScavTrap::attack(const std::string& target)
 {
 	if (_energy > 0 && _hp > 0)

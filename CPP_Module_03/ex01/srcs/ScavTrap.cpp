@@ -25,6 +25,15 @@ ScavTrap::~ScavTrap()
 	std::cout  << std::endl << "ScavTrap Destructor called";
 }
 
+ScavTrap& ScavTrap::operator= (ScavTrap const &scavtrap)
+{
+	_name = scavtrap._name;
+	_hp = scavtrap._hp;
+	_energy = scavtrap._energy;
+	_damage = scavtrap._damage;
+	return *this;
+}
+
 void ScavTrap::attack(const std::string& target)
 {
 	if (_energy > 0 && _hp > 0)
@@ -35,7 +44,7 @@ void ScavTrap::attack(const std::string& target)
 		std::cout << "HP = " << _hp << std::endl;
 		return;
 	}
-	else if (_hp < 0)
+	else if (_hp <= 0)
 	{
 		std::cout  << std::endl << "ScavTrap " << _name << " his dead" << std::endl;
 		return;

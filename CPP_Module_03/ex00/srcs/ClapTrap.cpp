@@ -38,7 +38,7 @@ void ClapTrap::attack(const std::string& target)
 		std::cout << "HP = " << _hp << std::endl;
 		return;
 	}
-	else if (_hp < 0)
+	else if (_hp <= 0)
 	{
 		std::cout  << std::endl << "ClapTrap " << _name << " his dead" << std::endl;
 		return;
@@ -48,7 +48,7 @@ void ClapTrap::attack(const std::string& target)
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-	if (_hp < 0)
+	if (_hp <= 0)
 	{
 		std::cout  << std::endl << "ClapTrap " << _name << " his dead" << std::endl;
 		return;
@@ -71,7 +71,7 @@ void ClapTrap::beRepaired(unsigned int amount)
 		std::cout << "HP = " << _hp << std::endl;
 		return;
 	}
-	else if (_hp < 0)
+	else if (_hp <= 0)
 	{
 		std::cout  << std::endl << "ClapTrap " << _name << " his dead" << std::endl;
 		return;
