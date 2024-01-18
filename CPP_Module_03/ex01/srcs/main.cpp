@@ -9,7 +9,7 @@ int	main()
 	bot.beRepaired(5);
 	bot.attack("some creatures");
 	bot.beRepaired(5);
-	// bot.guardGate();
+	bot.guardGate();
 
 	std::cout << "-----------------------------------------" << std::endl;
 
