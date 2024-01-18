@@ -3,20 +3,20 @@
 
 ClapTrap::ClapTrap() : _name ("NULL"), _hp (10), _energy (10), _damage (0)
 {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "ClapTrap default constructor called" << std::endl;
 }
 ClapTrap::ClapTrap(std::string name) : _name (name), _hp (10), _energy (10), _damage (0)
 {
-	std::cout << "Constructor called" << std::endl;
+	std::cout << "ClapTrap constructor called" << std::endl;
 }
-ClapTrap::ClapTrap(ClapTrap const &clapTrap)
+ClapTrap::ClapTrap(ClapTrap const &claptrap)
 {
-	*this = clapTrap;
-	std::cout << "Copy constructor called" << std::endl;
+	*this = claptrap;
+	std::cout << "ClapTrap copy constructor called" << std::endl;
 }
 ClapTrap::~ClapTrap()
 {
-	std::cout  << std::endl << "Destructor called";
+	std::cout  << std::endl << "ClapTrap sestructor called";
 }
 
 ClapTrap& ClapTrap::operator= (ClapTrap const &claptrap)

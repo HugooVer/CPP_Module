@@ -6,7 +6,7 @@
 
 class ClapTrap
 {
-private:
+protected:
 	std::string _name;
 	int _hp;
 	int _energy;
@@ -15,7 +15,7 @@ private:
 public:
 	ClapTrap();
 	ClapTrap(std::string _name);
-	ClapTrap(ClapTrap const &clapTrap);
+	ClapTrap(ClapTrap const &claptrap);
 	~ClapTrap();
 
 	ClapTrap& operator= (ClapTrap const &claptrap);

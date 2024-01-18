@@ -1,27 +1,22 @@
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int	main()
 {
-	ClapTrap	bot("Box");
-	ClapTrap	bo("Bo");
+	ClapTrap	box("Box");
+	ScavTrap	bot("Serena");
 
 	bot.attack("some creatures");
-	bot.attack("some creatures");
-	bot.attack("some creatures");
-	bot.attack("some creatures");
-	bot.attack("some creatures");
-	bot.attack("some creatures");
-	bot.attack("some creatures");
-	bot.takeDamage(8);
+	bot.beRepaired(5);
 	bot.attack("some creatures");
 	bot.beRepaired(5);
-	bot.beRepaired(5);
-	bot.beRepaired(5);
-	bot.takeDamage(18);
-	bot.takeDamage(20);
-	bot.beRepaired(5);
-	bot.beRepaired(5);
-	bot.attack("void");
+	// bot.guardGate();
+
+	std::cout << "-----------------------------------------" << std::endl;
+
+	box.attack("some creatures");
+	box.beRepaired(5);
+	box.attack("some creatures");
+	box.beRepaired(5);
 	
 	return (EXIT_SUCCESS);
 }
