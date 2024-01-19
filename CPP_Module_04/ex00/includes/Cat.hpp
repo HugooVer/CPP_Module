@@ -13,5 +13,4 @@ public:
 
 	Cat& operator= (Cat const &cat);
 	void makeSound() const;
-	// std::string getType() const;
 };
