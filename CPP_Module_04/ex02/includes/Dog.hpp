@@ -18,6 +18,6 @@ public:
 	Dog& operator= (Dog const &dog);
 	void makeSound() const;
 
-// 	void            setIdea(int idx, std::string idea);
-//     std::string&    getIdea(int idx);
+	void setIdea(int idx, std::string idea);
+	std::string& getIdea(int idx);
 };

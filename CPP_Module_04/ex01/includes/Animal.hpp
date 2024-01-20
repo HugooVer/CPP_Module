@@ -19,9 +19,6 @@ public:
 	virtual void makeSound() const;
 	std::string getType() const;
 
-	// virtual void    setIdea(int idx, std::string idea) {(void)idx, (void)idea;}
-
-	// virtual std::string&    getIdea(int idx) {(void)idx; static std::string emptyString; return emptyString;}
 };
 
 std::ostream &operator<< (std::ostream &os, Animal const &animal);

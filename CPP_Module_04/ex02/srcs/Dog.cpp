@@ -34,20 +34,22 @@ void Dog::makeSound() const
 	std::cout << "woof" << std::endl;
 }
 
-// void Dog::setIdea(int idx, std::string idea) {
-//     if (idx >= 100)
-//         std::cerr << "Index too high, Dog cannot retain that many ideas.\n";
-//     else {
-//         this->brain->getIdea(idx) = idea;
-//     }
-// }
-// std::string& Dog::getIdea(int idx) {
-//     if (idx >= 100) {
-//         std::cerr << "Index too high, Dog cannot retain that many ideas.\n";
-//         static std::string emptyString;
-//         return emptyString;
-//     }
-//     else {
-//         return this->brain->getIdea(idx);
-//     }
-// }
+void Dog::setIdea(int idx, std::string idea)
+{
+	if (idx >= 100)
+		std::cerr << "Index too high, Dog cannot retain that many ideas." << std::endl;
+	else
+		this->brain->getIdea(idx) = idea;
+}
+
+std::string& Dog::getIdea(int idx)
+{
+	if (idx >= 100)
+	{
+		std::cerr << "Index too high, Dog cannot retain that many ideas." << std::endl;
+		static std::string emptyString;
+		return emptyString;
+	}
+	else
+		return this->brain->getIdea(idx);
+}

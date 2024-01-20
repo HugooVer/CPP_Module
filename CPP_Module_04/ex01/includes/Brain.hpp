@@ -16,6 +16,4 @@ public:
 
 	Brain& operator= (Brain const &brain);
 
-	// std::string& getIdea(int idx);
-
 };

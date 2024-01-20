@@ -21,13 +21,3 @@ Brain& Brain::operator= (Brain const &brain)
 		ideas[idx] = brain.ideas[idx];
 	return (*this);
 }
-
-// std::string& Brain::getIdea(int idx) {
-//     if (idx >= 100) {
-//         std::cerr << "Index too high, Cat cannot retain that many ideas.\n";
-//         static std::string emptyString;
-//         return emptyString;
-//     }
-//     else 
-//         return this->ideas[idx];
-// }
