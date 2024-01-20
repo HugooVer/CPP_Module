@@ -5,12 +5,12 @@ Dog::Dog() : Animal()
 {
 	type = "Dog";
 	brain = new Brain();
-	std::cout << "Dog default constructor caled" << std::endl;
+	std::cout << "Dog default constructor called" << std::endl;
 }
 Dog::Dog(std::string animalType) : Animal(animalType)
 {
 	brain = new Brain();
-	std::cout << "Dog constructor caled" << std::endl;
+	std::cout << "Dog constructor called" << std::endl;
 }
 Dog::Dog(Dog const &dog)
 {
@@ -20,7 +20,7 @@ Dog::Dog(Dog const &dog)
 Dog::~Dog()
 {
 	delete brain;
-	std::cout << "Dog destructor caled" << std::endl;
+	std::cout << "Dog destructor called" << std::endl;
 }
 
 Dog& Dog::operator= (Dog const &dog)

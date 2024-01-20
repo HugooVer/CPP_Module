@@ -3,11 +3,11 @@
 
 WrongAnimal::WrongAnimal() : type ("NULL")
 {
-	std::cout << "WrongAnimal default constructor caled" << std::endl;
+	std::cout << "WrongAnimal default constructor called" << std::endl;
 }
 WrongAnimal::WrongAnimal(std::string wrongAnimalType) : type (wrongAnimalType)
 {
-	std::cout << "WrongAnimal constructor caled" << std::endl;
+	std::cout << "WrongAnimal constructor called" << std::endl;
 }
 WrongAnimal::WrongAnimal(WrongAnimal const &wrongAnimal)
 {
@@ -16,7 +16,7 @@ WrongAnimal::WrongAnimal(WrongAnimal const &wrongAnimal)
 }
 WrongAnimal::~WrongAnimal()
 {
-	std::cout << "WrongAnimal destructor caled" << std::endl;
+	std::cout << "WrongAnimal destructor called" << std::endl;
 }
 
 WrongAnimal& WrongAnimal::operator= (WrongAnimal const &wrongAnimal)

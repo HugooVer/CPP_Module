@@ -4,11 +4,11 @@
 WrongCat::WrongCat() : WrongAnimal()
 {
 	type = "WrongCat";
-	std::cout << "WrongCat default constructor caled" << std::endl;
+	std::cout << "WrongCat default constructor called" << std::endl;
 }
 WrongCat::WrongCat(std::string WrongAnimalType) : WrongAnimal(WrongAnimalType)
 {
-	std::cout << "WrongCat constructor caled" << std::endl;
+	std::cout << "WrongCat constructor called" << std::endl;
 }
 WrongCat::WrongCat(WrongCat const &wrongCat)
 {
@@ -17,7 +17,7 @@ WrongCat::WrongCat(WrongCat const &wrongCat)
 }
 WrongCat::~WrongCat()
 {
-	std::cout << "WrongCat destructor caled" << std::endl;
+	std::cout << "WrongCat destructor called" << std::endl;
 }
 
 WrongCat& WrongCat::operator= (WrongCat const &wrongCat)

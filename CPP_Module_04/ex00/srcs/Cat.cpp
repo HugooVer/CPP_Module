@@ -4,11 +4,11 @@
 Cat::Cat() : Animal()
 {
 	type = "Cat";
-	std::cout << "Cat default constructor caled" << std::endl;
+	std::cout << "Cat default constructor called" << std::endl;
 }
 Cat::Cat(std::string animalType) : Animal(animalType)
 {
-	std::cout << "Cat constructor caled" << std::endl;
+	std::cout << "Cat constructor called" << std::endl;
 }
 Cat::Cat(Cat const &cat)
 {
@@ -17,7 +17,7 @@ Cat::Cat(Cat const &cat)
 }
 Cat::~Cat()
 {
-	std::cout << "Cat destructor caled" << std::endl;
+	std::cout << "Cat destructor called" << std::endl;
 }
 
 Cat& Cat::operator= (Cat const &cat)

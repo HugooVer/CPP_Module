@@ -3,11 +3,11 @@
 
 Animal::Animal() : type ("NULL")
 {
-	std::cout << "Animal default constructor caled" << std::endl;
+	std::cout << "Animal default constructor called" << std::endl;
 }
 Animal::Animal(std::string animalType) : type (animalType)
 {
-	std::cout << "Animal constructor caled" << std::endl;
+	std::cout << "Animal constructor called" << std::endl;
 }
 Animal::Animal(Animal const &animal)
 {
@@ -16,7 +16,7 @@ Animal::Animal(Animal const &animal)
 }
 Animal::~Animal()
 {
-	std::cout << "Animal destructor caled" << std::endl;
+	std::cout << "Animal destructor called" << std::endl;
 }
 
 Animal& Animal::operator= (Animal const &animal)
