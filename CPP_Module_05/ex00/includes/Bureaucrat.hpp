@@ -12,6 +12,7 @@ protected:
 
 public:
 	Bureaucrat();
+	Bureaucrat(Bureaucrat const &bureaucrat);
 	Bureaucrat(std::string name, int grade);
 	~Bureaucrat();
 
@@ -21,6 +22,8 @@ public:
 	void incr();
 	void decr();
 	void setGrade(int grade);
+
+	Bureaucrat& operator= (Bureaucrat const &bureaucrat);
 
 	class GradeTooHighException: public std::exception
 	{

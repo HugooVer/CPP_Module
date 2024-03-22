@@ -3,7 +3,18 @@
 
 int main() {
 
-	Bureaucrat();
+	try
+	{
+		Bureaucrat cp;
+		cp.decr();
+		Bureaucrat cpy(cp);
+		cp.decr();
+		cpy.decr();
+	}
+	catch (std::exception& e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 
 	try
 	{
