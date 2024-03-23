@@ -10,14 +10,14 @@ SRCS_PATH = srcs/
 
 SRCS += main.cpp
 SRCS += Bureaucrat.cpp
-SRCS +=  Form.cpp
+SRCS += Form.cpp
 
 vpath %.cpp ${SRCS_PATH}
 
 INCLUDES	= includes/
 
 HEADERS += Bureaucrat.hpp
-HEADERS +=  Form.hpp
+HEADERS += Form.hpp
 
 vpath %.hpp ${INCLUDES}
 
