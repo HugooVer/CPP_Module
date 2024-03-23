@@ -4,30 +4,28 @@
 #include <iostream>
 #include <cstdlib>
 
-#include "Bureaurat.hpp"
+#include "Bureaucrat.hpp"
 
 class Form
 {
 private:
-	const std::string _name;
+	std::string _name;
 	bool _isSigned;
-	const int _signGrade;
-	const int _execGrade;
+	const signed int _signGrade;
+	const signed int _execGrade;
 
 public:
 	Form();
 	Form(Form const &form);
-	Form(std::string name, int signGrade, int execGrade);
+	Form(std::string name, const int signGrade, const int execGrade);
 	~Form();
 
 	std::string getName() const;
-	signed bool getSigend() const;
+	bool getIsSigend();
 	signed int getSignGrade() const;
 	signed int getExecGrade() const;
 
-	void setGrade(int grade, int arg);
-
-	void beSigned(Bureaurat bureaurat);
+	void beSigned(Bureaucrat bureaucrat);
 
 	Form& operator= (Form const &form);
 
@@ -37,11 +35,6 @@ public:
 				virtual const char* what() const throw();
 	};
 	class GradeTooLowException: public std::exception
-	{
-		public:
-				virtual const char* what() const throw();
-	};
-		class BadArgument: public std::exception
 	{
 		public:
 				virtual const char* what() const throw();

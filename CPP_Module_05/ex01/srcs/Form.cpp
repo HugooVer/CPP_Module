@@ -4,40 +4,46 @@ Form::Form() : _name ("..."), _isSigned (false), _signGrade (1), _execGrade (1)
 {
 	std::cout << "New default Form created" << std::endl;
 }
-Form::Form(std::string name, int signGrade, int execGrade) : _name (name) _isSigned (false)
+Form::Form(std::string name, int signGrade, int execGrade) : _name (name), _isSigned (false), _signGrade (signGrade), _execGrade (execGrade)
 {
-	setGrade(signGrade, 0);
-	setGrade(execGradeGrade, 1);
-	std::cout << "New Form created" std::endl;
+	if (_execGrade < 1 || _signGrade < 1)
+		throw GradeTooHighException();
+	else if (_execGrade > 150 || _signGrade > 150)
+		throw GradeTooLowException();
+	std::cout << "New Form created" << std::endl;
 }
-Form::Form(Form const &form)
+Form::Form(Form const &form) : _name (form._name), _isSigned (form._isSigned), _signGrade (form._signGrade), _execGrade (form._execGrade)
 {
-	*this = form;
+	
 	std::cout << "New copie Form created" << std::endl;
 }
 Form::~Form()
 {
-	std::cout << "Form " << this.getName() << " destructor called" << std::endl << std::endl;
+	std::cout << "Form " << this->getName() << " destructor called" << std::endl << std::endl;
 }
 
-void Form::setGrade(int grade, int arg)
+std::string Form::getName() const
 {
-	if (grade < 1)
-		throw GradeTooHighException();
-	else if (grade > 150)
-		throw GradeTooLowException();
-	else if (pos == 0)
-		_signGrade = grade;
-	else if (pos == 1)
-		_execGrade = grade;
-	else
-		throw BadArgument();
+	return _name;
+}
+bool Form::getIsSigend()
+{
+	return _isSigned;
+}
+signed int Form::getSignGrade() const
+{
+	return _signGrade;
+}
+signed int Form::getExecGrade() const
+{
+	return _execGrade;
 }
 
-Form& Form::operator= (Form const &form)
-{
+Form& Form::operator=(const Form& form) {
 	_name = form.getName();
-	_grade = form.getGrade();
+	_isSigned = form._isSigned;
+	*const_cast<int*>(&_signGrade) = form.getSignGrade();
+	*const_cast<int*>(&_execGrade) = form.getExecGrade();
 	return *this;
 }
 
@@ -54,8 +60,4 @@ const char *Form::GradeTooHighException::what() const throw ()
 const char *Form::GradeTooLowException::what() const throw ()
 {
 	return "Grade is too low minimum grade is 150";
-}
-const char *Form::GradeTooLowException::what() const throw ()
-{
-	return "Bad argument check you code !! ";
 }
