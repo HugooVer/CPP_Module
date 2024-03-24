@@ -69,7 +69,11 @@ void Form::signForm(Bureaucrat &bureaucrat)
 	}
 	catch (std::exception& e)
 	{
-		std::cout << bureaucrat.getName() << " couldn’t sign " << _name << " because his " << e.what() << std::endl;
+		if (bureaucrat.getGrade() - _signGrade == 1)
+			std::cout << bureaucrat.getName() << " couldn’t sign " << _name << " because his " << e.what() << bureaucrat.getGrade() - _signGrade << " grade point is missing." << std::endl;
+		else
+			std::cout << bureaucrat.getName() << " couldn’t sign " << _name << " because his " << e.what() << bureaucrat.getGrade() - _signGrade << " grades points are missing." << std::endl;
+
 	}
 }
 
@@ -84,11 +88,11 @@ Form& Form::operator=(const Form& form) {
 
 const char *Form::GradeTooHighException::what() const throw ()
 {
-	return "Grade is too high";
+	return "Grade is too high ";
 }
 const char *Form::GradeTooLowException::what() const throw ()
 {
-	return "Grade is too low";
+	return "Grade is too low ";
 }
 
 
@@ -103,7 +107,7 @@ std::ostream &operator<< (std::ostream &os, Form const &form)
 
 std::string btos(bool x)
 {
-	if (x) 
-		return "Signed"; 
-	return "Unsigned"; 
+	if (x)
+		return "Signed";
+	return "Unsigned";
 }
