@@ -6,10 +6,14 @@ int main() {
 	try
 	{
 		Bureaucrat cp;
+		std::cout << cp << std::endl;
 		cp.decr();
 		Bureaucrat cpy(cp);
+		std::cout << cpy << std::endl;
 		cp.decr();
 		cpy.decr();
+		std::cout << cp << std::endl;
+		std::cout << cpy << std::endl;
 	}
 	catch (std::exception& e)
 	{
@@ -18,7 +22,8 @@ int main() {
 
 	try
 	{
-		Bureaucrat ("To High", 151);
+		Bureaucrat tL("To Low", 151);
+		std::cout << tL << std::endl;
 	}
 	catch (std::exception& e)
 	{
@@ -27,7 +32,8 @@ int main() {
 
 	try
 	{
-		Bureaucrat ("To Low", 0);
+		Bureaucrat tH("To High", 0);
+		std::cout << tH << std::endl;
 	}
 	catch (std::exception& e)
 	{
@@ -36,9 +42,10 @@ int main() {
 
 	try
 	{
-		Bureaucrat b("Good Low", 145);
+		Bureaucrat gL("Good Low", 145);
+		std::cout << gL << std::endl;
 		for (int i = 0; i < 10; i++)
-			b.decr();
+			gL.decr();
 	}
 	catch (std::exception& e)
 	{
@@ -47,9 +54,10 @@ int main() {
 
 	try
 	{
-		Bureaucrat b("Good High", 5);
+		Bureaucrat gH("Good High", 5);
+		std::cout << gH << std::endl;
 		for (int i = 0; i < 10; i++)
-			b.incr();
+			gH.incr();
 	}
 	catch (std::exception& e)
 	{
