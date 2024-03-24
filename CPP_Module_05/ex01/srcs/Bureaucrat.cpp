@@ -2,18 +2,17 @@
 
 Bureaucrat::Bureaucrat() : _name ("NØNAME"), _grade(1)
 {
-	std::cout << "New bureaucrat created\n\tmane\t:NØNAME\n\tgrade\t:1" << std::endl;
+	std::cout << "New bureaucrat created\n";
 }
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name (name)
 {
 	setGrade(grade);
-	std::cout << "New bureaucrat created\n\tmane\t:"<< _name <<"\n\tgrade\t:"<<_grade << std::endl;
+	std::cout << "New bureaucrat created\n";
 }
 Bureaucrat::Bureaucrat(Bureaucrat const &bureaucrat)
 {
 	*this = bureaucrat;
 	std::cout << "Copy Bureaucrat constructor called" << std::endl;
-	std::cout << "New bureaucrat created\n\tmane\t:"<< _name <<"\n\tgrade\t:"<<_grade << std::endl;
 }
 Bureaucrat::~Bureaucrat()
 {
@@ -63,4 +62,12 @@ const char *Bureaucrat::GradeTooHighException::what() const throw ()
 const char *Bureaucrat::GradeTooLowException::what() const throw ()
 {
 	return "Grade is too low minimum grade is 150";
+}
+
+
+std::ostream &operator<< (std::ostream &os, Bureaucrat const &bureaucrat)
+{
+	os  << "\nName :" << bureaucrat.getName()
+		<< "\nGrade :" << bureaucrat.getGrade();
+	return os;
 }

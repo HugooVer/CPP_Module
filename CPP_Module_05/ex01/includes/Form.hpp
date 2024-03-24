@@ -21,24 +21,26 @@ public:
 	~Form();
 
 	std::string getName() const;
-	bool getIsSigend();
+	bool getIsSigend() const;
 	signed int getSignGrade() const;
 	signed int getExecGrade() const;
 
-	void beSigned(Bureaucrat bureaucrat);
+	void beSigned(Bureaucrat &bureaucrat);
+	void signForm(Bureaucrat &bureaucrat);
 
 	Form& operator= (Form const &form);
 
 	class GradeTooHighException: public std::exception
 	{
 		public:
-				virtual const char* what() const throw();
+			virtual const char* what() const throw();
 	};
 	class GradeTooLowException: public std::exception
 	{
 		public:
-				virtual const char* what() const throw();
+			virtual const char* what() const throw();
 	};
 };
 
 std::ostream &operator<< (std::ostream &os, Form const &form);
+std::string btos(bool x);
