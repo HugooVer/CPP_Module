@@ -6,7 +6,7 @@
 
 #include "Bureaucrat.hpp"
 
-class Form
+class AForm
 {
 private:
 	std::string _name;
@@ -15,20 +15,21 @@ private:
 	const signed int _execGrade;
 
 public:
-	Form();
-	Form(Form const &form);
-	Form(std::string name, const int signGrade, const int execGrade);
-	~Form();
+	AForm();
+	AForm(AForm const &aform);
+	AForm(std::string name, const int signGrade, const int execGrade);
+	virtual ~AForm();
 
-	std::string getName() const = 0;
+	std::string getName() const;
 	bool getIsSigend() const;
 	signed int getSignGrade() const;
 	signed int getExecGrade() const;
 
 	void beSigned(Bureaucrat &bureaucrat);
-	void signForm(Bureaucrat &bureaucrat);
+	void signAForm(Bureaucrat &bureaucrat);
+	virtual void execute(const Bureaucrat &bureaucrat) const = 0;
 
-	Form& operator= (Form const &form);
+	AForm& operator= (AForm const &aform);
 
 	class GradeTooHighException: public std::exception
 	{
@@ -42,5 +43,5 @@ public:
 	};
 };
 
-std::ostream &operator<< (std::ostream &os, Form const &form);
+std::ostream &operator<< (std::ostream &os, AForm const &aform);
 std::string btos(bool x);
