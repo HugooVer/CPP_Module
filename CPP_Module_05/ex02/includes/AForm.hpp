@@ -29,7 +29,7 @@ public:
 	void signAForm(Bureaucrat &bureaucrat);
 	virtual void execute(const Bureaucrat &bureaucrat) const = 0;
 
-	AForm& operator= (AForm const &aform);
+	
 
 	class GradeTooHighException: public std::exception
 	{
