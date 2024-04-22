@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <cstdlib>
+#include <fstream>
 
 #include "AForm.hpp"
 #include "Bureaucrat.hpp"
@@ -19,7 +20,8 @@ class ShrubberyCreationForm : public AForm
 
 		ShrubberyCreationForm& operator= (ShrubberyCreationForm const &shrubberycreationform);
 
-		void execute(const Bureaucrat &bureaucrat) const;
+		void execute(Bureaucrat &bureaucrat);
+
 		std::string getTarget() const;
 
 };

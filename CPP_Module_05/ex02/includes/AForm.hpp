@@ -27,9 +27,10 @@ public:
 
 	void beSigned(Bureaucrat &bureaucrat);
 	void signAForm(Bureaucrat &bureaucrat);
-	virtual void execute(const Bureaucrat &bureaucrat) const = 0;
 
-	
+	void beExec(const Bureaucrat &bureaucrat);
+
+	AForm& operator= (AForm const &aform);
 
 	class GradeTooHighException: public std::exception
 	{
@@ -37,6 +38,16 @@ public:
 			virtual const char* what() const throw();
 	};
 	class GradeTooLowException: public std::exception
+	{
+		public:
+			virtual const char* what() const throw();
+	};
+	class FileError: public std::exception
+	{
+		public:
+			virtual const char* what() const throw();
+	};
+	class NotSigned: public std::exception
 	{
 		public:
 			virtual const char* what() const throw();
