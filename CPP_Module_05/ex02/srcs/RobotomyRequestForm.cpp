@@ -4,13 +4,13 @@
 RobotomyRequestForm::RobotomyRequestForm() :
 	AForm()
 {
-	std::cout << "New default Shrubbery created" << std::endl;
+	std::cout << "New default Roboto created" << std::endl;
 }
 RobotomyRequestForm::RobotomyRequestForm(std::string target) :
-	AForm("Shrubbery", 72, 45),
+	AForm("Roboto", 72, 45),
 	_target (target)
 {
-	std::cout << "New Shrubbery created" << std::endl;
+	std::cout << "New Roboto created" << std::endl;
 }
 RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &robotomyrequestform) :
 	AForm(robotomyrequestform),
@@ -21,7 +21,7 @@ RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &robotomyrequ
 
 RobotomyRequestForm::~RobotomyRequestForm()
 {
-	std::cout << "Shrubbery destructor" << std::endl;
+	std::cout << "Roboto destructor" << std::endl;
 }
 
 void RobotomyRequestForm::execute(Bureaucrat &bureaucrat)

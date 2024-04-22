@@ -4,13 +4,13 @@
 PresidentialPardonForm::PresidentialPardonForm() :
 	AForm()
 {
-	std::cout << "New default Shrubbery created" << std::endl;
+	std::cout << "New default Presidential created" << std::endl;
 }
 PresidentialPardonForm::PresidentialPardonForm(std::string target) :
-	AForm("Shrubbery", 25, 5),
+	AForm("Presidential", 25, 5),
 	_target (target)
 {
-	std::cout << "New Shrubbery created" << std::endl;
+	std::cout << "New Presidential created" << std::endl;
 }
 PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const &presidentialpardonform) :
 	AForm(presidentialpardonform),
@@ -21,7 +21,7 @@ PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const &pre
 
 PresidentialPardonForm::~PresidentialPardonForm()
 {
-	std::cout << "Shrubbery destructor" << std::endl;
+	std::cout << "Presidential destructor" << std::endl;
 }
 
 void PresidentialPardonForm::execute(Bureaucrat &bureaucrat)
@@ -29,7 +29,7 @@ void PresidentialPardonForm::execute(Bureaucrat &bureaucrat)
 	try
 	{
 		AForm::beExec(bureaucrat);
-		std::cout << "Informs that" << _target << " has been pardoned by Zaphod Beeblebrox" << std::endl;
+		std::cout << "Informs that " << _target << " has been pardoned by Zaphod Beeblebrox" << std::endl;
 	}
 	catch (FileError& e)
 	{
