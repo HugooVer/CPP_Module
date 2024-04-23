@@ -41,7 +41,7 @@ ${OBJS}: ${OBJS_PATH}/%.o: %.cpp Makefile ${INCLUDES}
 
 clean:
 	${RM} -r ${OBJS_PATH}
-	rm *_shrubbery
+	${RM} *_shrubbery
 
 fclean: clean
 	${RM} ${NAME}
