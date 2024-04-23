@@ -35,12 +35,10 @@ int main() {
 		pre.execute(bad);
 		std::cout << std::endl;
 		tree.execute(good);
-		robo.execute(good);
 		tree.execute(good);
 		robo.execute(good);
-		tree.execute(good);
 		robo.execute(good);
-		tree.execute(good);
+		robo.execute(good);
 		robo.execute(good);
 		std::cout << std::endl;
 		pre.execute(good);

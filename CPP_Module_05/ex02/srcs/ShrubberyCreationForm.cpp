@@ -28,8 +28,10 @@ void ShrubberyCreationForm::execute(Bureaucrat &bureaucrat)
 {
 	try
 	{
+
 		AForm::beExec(bureaucrat);
-		std::ofstream myOutputFile (_target.append("_shrubbery").c_str());
+		std::string _targetT = _target;
+		std::ofstream myOutputFile (_targetT.append("_shrubbery").c_str());
 		if (!myOutputFile.is_open() || myOutputFile.fail())
 			throw FileError();
 		myOutputFile <<
