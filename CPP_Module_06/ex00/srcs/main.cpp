@@ -1,7 +1,13 @@
 #include "ScalarConverter.hpp"
 
-int main ()
+int main (int argc, char *argv[])
 {
-	ScalarConverter P;
-	P.checkType("test");
+	if (argc != 2)
+	{
+		std::cout << "Not good format ony one argument !" << std::endl;
+		exit(EXIT_FAILURE);
+	}
+	// ScalarConverter P;
+	ScalarConverter.checkType(argv[1]);
+	return 0;
 }
