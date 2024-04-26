@@ -5,15 +5,6 @@
 #include <string>
 #include <sstream>
 
-enum type{
-	OTHER,
-	CHAR,
-	INT,
-	FLOAT,
-	DOUBLE,
-	INVALID
-};
-
 class ScalarConverter
 {
 	private:
