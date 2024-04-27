@@ -100,7 +100,7 @@ std::string ScalarConverter::toFloatFormat(std::string s)
 		sss << c;
 		for (size_t idx = 0; idx <= s.size() - 1; ++idx)
 		{
-			if (s[idx] == '.' )
+			if (sss.str()[idx] == '.' )
 				return sss.str() + "f";
 		}
 		return sss.str() + ".0f";
@@ -123,9 +123,10 @@ std::string ScalarConverter::toDoubleFormat(std::string s)
 		ss >> c;
 		std::stringstream sss;
 		sss << c;
+		// std::cout << 
 		for (size_t idx = 0; idx <= s.size() - 1; ++idx)
 		{
-			if (s[idx] == '.' )
+			if (sss.str()[idx] == '.' )
 				return sss.str();
 		}
 		return sss.str() + ".0";
@@ -138,8 +139,8 @@ int ScalarConverter::charTcheck(std::string s)
 {
 	if (isPseudo(s) != 0)
 		return 12;
-	else if (s.size() == 1 && myIsPrint(s[0]) == 1)
-		return 1;
+	else if (s.size() == 1)
+		return 0;
 	else if (s.size() > 3)
 		return 0;
 	else if (myIsPrint(toInt(s)) == 1)
@@ -156,6 +157,8 @@ int ScalarConverter::intTcheck(std::string s)
 		return 0;
 	else
 	{
+		if (s.size() == 1)
+			return 1;
 		for (size_t idx = 1; idx <= s.size() - 2; ++idx)
 		{
 			if (myIsDigit(s[idx]) != 1 && s[idx] != '.')
@@ -177,6 +180,8 @@ int ScalarConverter::floatTcheck(std::string s)
 		return 0;
 	else
 	{
+		if (s.size() == 1)
+			return 1;
 		for (size_t idx = 1; idx <= s.size() - 2; ++idx)
 		{
 			if (myIsDigit(s[idx]) != 1 && s[idx] != '.')
@@ -198,6 +203,8 @@ int ScalarConverter::doubleTcheck(std::string s)
 		return 0;
 	else
 	{
+		if (s.size() == 1)
+			return 1;
 		for (size_t idx = 1; idx <= s.size() - 2; ++idx)
 		{
 			if (myIsDigit(s[idx]) != 1 && s[idx] != '.')
