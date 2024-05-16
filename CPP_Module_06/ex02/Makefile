@@ -10,9 +10,6 @@ SRCS_PATH = srcs/
 
 SRCS += main.cpp
 SRCS += Base.cpp
-SRCS += A.cpp
-SRCS += B.cpp
-SRCS += C.cpp
 
 vpath %.cpp ${SRCS_PATH}
 
