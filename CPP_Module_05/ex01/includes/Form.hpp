@@ -9,7 +9,7 @@
 class Form
 {
 private:
-	std::string _name;
+	const std::string _name;
 	bool _isSigned;
 	const signed int _signGrade;
 	const signed int _execGrade;

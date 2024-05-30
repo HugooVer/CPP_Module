@@ -54,31 +54,31 @@ void Form::beSigned(Bureaucrat &bureaucrat)
 	if (bureaucrat.getGrade() > _signGrade)
 		throw GradeTooLowException();
 }
-void Form::signForm(Bureaucrat &bureaucrat)
-{
-	try
-	{
-		beSigned(bureaucrat);
-		if (_isSigned == true)
-			std::cout << bureaucrat.getName() << " couldn’t sign " << _name << " because it's alredy signed" << std::endl;
-		else
-		{
-			_isSigned = true;
-			std::cout << bureaucrat.getName() << " siged " << _name << std::endl;
-		}
-	}
-	catch (std::exception& e)
-	{
-		if (bureaucrat.getGrade() - _signGrade == 1)
-			std::cout << bureaucrat.getName() << " couldn’t sign " << _name << " because his " << e.what() << bureaucrat.getGrade() - _signGrade << " grade point is missing." << std::endl;
-		else
-			std::cout << bureaucrat.getName() << " couldn’t sign " << _name << " because his " << e.what() << bureaucrat.getGrade() - _signGrade << " grades points are missing." << std::endl;
+// void Form::signForm(Bureaucrat &bureaucrat)
+// {
+// 	try
+// 	{
+// 		beSigned(bureaucrat);
+// 		if (_isSigned == true)
+// 			std::cout << bureaucrat.getName() << " couldn’t sign " << _name << " because it's alredy signed" << std::endl;
+// 		else
+// 		{
+// 			_isSigned = true;
+// 			std::cout << bureaucrat.getName() << " siged " << _name << std::endl;
+// 		}
+// 	}
+// 	catch (std::exception& e)
+// 	{
+// 		if (bureaucrat.getGrade() - _signGrade == 1)
+// 			std::cout << bureaucrat.getName() << " couldn’t sign " << _name << " because his " << e.what() << bureaucrat.getGrade() - _signGrade << " grade point is missing." << std::endl;
+// 		else
+// 			std::cout << bureaucrat.getName() << " couldn’t sign " << _name << " because his " << e.what() << bureaucrat.getGrade() - _signGrade << " grades points are missing." << std::endl;
 
-	}
-}
+// 	}
+// }
 
 Form& Form::operator=(const Form& form) {
-	_name = form.getName();
+	*const_cast<std::string*>(&_name) = form.getName();
 	_isSigned = form.getIsSigend();
 	_isSigned = form._isSigned;
 	*const_cast<int*>(&_signGrade) = form.getSignGrade();

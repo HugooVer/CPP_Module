@@ -23,6 +23,8 @@ public:
 	void decr();
 	void setGrade(int grade);
 
+	// void signForm(Bureaucrat &bureaucrat);
+	// 
 	Bureaucrat& operator= (Bureaucrat const &bureaucrat);
 
 	class GradeTooHighException: public std::exception

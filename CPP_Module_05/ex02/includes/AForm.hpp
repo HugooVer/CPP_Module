@@ -28,6 +28,8 @@ public:
 	void beSigned(Bureaucrat &bureaucrat);
 	void signAForm(Bureaucrat &bureaucrat);
 
+	virtual void execute(Bureaucrat &bureaucrat) = 0;
+
 	void beExec(const Bureaucrat &bureaucrat);
 
 	AForm& operator= (AForm const &aform);
