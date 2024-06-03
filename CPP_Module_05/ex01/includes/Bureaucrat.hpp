@@ -1,5 +1,6 @@
-
 #pragma once
+
+#include "Form.hpp"
 
 #include <iostream>
 #include <cstdlib>
@@ -23,8 +24,8 @@ public:
 	void decr();
 	void setGrade(int grade);
 
-	// void signForm(Bureaucrat &bureaucrat);
-	// 
+	void signForm(Form &bureaucrat);
+
 	Bureaucrat& operator= (Bureaucrat const &bureaucrat);
 
 	class GradeTooHighException: public std::exception

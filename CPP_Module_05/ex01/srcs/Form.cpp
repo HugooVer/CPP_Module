@@ -1,4 +1,5 @@
 #include "Form.hpp"
+#include "Bureaucrat.hpp"
 
 Form::Form() : _name ("..."),
 	_isSigned (false),

@@ -1,10 +1,9 @@
-
 #pragma once
+
+#include "Bureaucrat.hpp"
 
 #include <iostream>
 #include <cstdlib>
-
-#include "Bureaucrat.hpp"
 
 class Form
 {
@@ -26,7 +25,7 @@ public:
 	signed int getExecGrade() const;
 
 	void beSigned(Bureaucrat &bureaucrat);
-	void signForm(Bureaucrat &bureaucrat);
+	// void signForm(Bureaucrat &bureaucrat);
 
 	Form& operator= (Form const &form);
 
