@@ -65,25 +65,24 @@ const char *Bureaucrat::GradeTooLowException::what() const throw ()
 	return "Grade is too low minimum grade is 150";
 }
 
-void Bureaucrat::signForm(Form &bureaucrat)
+void Bureaucrat::signForm(Form &form)
 {
 	try
 	{
-		beSigned(bureaucrat);
-		// if (_isSigned == true)
-		// 	std::cout << _name << " couldn’t sign " << bureaucrat.getName << " because it's alredy signed" << std::endl;
-		// else
-		// {
-		// 	_isSigned = true;
-		// 	std::cout << bureaucrat.getName() << " siged " << _name << std::endl;
-		// }
+		if (form.getIsSigend() == true)
+			std::cout << _name << " couldn’t sign " << form.getName() << " because it's alredy signed" << std::endl;
+		else
+		{
+			form.beSigned(*this);
+			std::cout << form.getName() << " siged " << _name << std::endl;
+		}
 	}
 	catch (std::exception& e)
 	{
-		// if (bureaucrat.getGrade() - _signGrade == 1)
-		// 	std::cout << bureaucrat.getName() << " couldn’t sign " << _name << " because his " << e.what() << bureaucrat.getGrade() - _signGrade << " grade point is missing." << std::endl;
-		// else
-		// 	std::cout << bureaucrat.getName() << " couldn’t sign " << _name << " because his " << e.what() << bureaucrat.getGrade() - _signGrade << " grades points are missing." << std::endl;
+		if (_grade - form.getSignGrade() == 1)
+			std::cout << _name << " couldn’t sign " << form.getName() << " because his " << e.what() << _grade - form.getSignGrade() << " grade point is missing." << std::endl;
+		else
+			std::cout << _name << " couldn’t sign " << form.getName() << " because his " << e.what() << _grade - form.getSignGrade() << " grades points are missing." << std::endl;
 
 	}
 }

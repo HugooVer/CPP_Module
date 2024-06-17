@@ -5,6 +5,8 @@
 #include <iostream>
 #include <cstdlib>
 
+class Bureaucrat;
+
 class Form
 {
 private:
@@ -25,7 +27,7 @@ public:
 	signed int getExecGrade() const;
 
 	void beSigned(Bureaucrat &bureaucrat);
-	// void signForm(Bureaucrat &bureaucrat);
+	void signe();
 
 	Form& operator= (Form const &form);
 

@@ -17,14 +17,14 @@ int main() {
 	try
 	{
 		std::cout << "\n\n";
-		// Bureaucrat good("Good", 10);
-		// std::cout << good << std::endl;
-		// Form test("Test", 10, 10);
-		// std::cout << test << std::endl;
-		// test.signForm(good);
-		// std::cout << test << std::endl;
-		// test.signForm(good);
-		// std::cout << test << std::endl;
+		Bureaucrat good("Good", 10);
+		std::cout << good << std::endl;
+		Form test("Test", 10, 10);
+		std::cout << test << std::endl;
+		good.signForm(test);
+		std::cout << test << std::endl;
+		good.signForm(test);
+		std::cout << test << std::endl;
 	}
 	catch (std::exception& e)
 	{
@@ -34,18 +34,18 @@ int main() {
 	try
 	{
 		std::cout << "\n\n";
-		// Bureaucrat bad("Bad", 12);
-		// std::cout << bad << std::endl;
-		// Form test("Test", 10, 10);
-		// std::cout << test << std::endl;
-		// test.signForm(bad);
-		// std::cout << test << std::endl;
-		// bad.incr();
-		// test.signForm(bad);
-		// std::cout << test << std::endl;
-		// bad.incr();
-		// test.signForm(bad);
-		// std::cout << test << std::endl;
+		Bureaucrat bad("Bad", 12);
+		std::cout << bad << std::endl;
+		Form test("Test", 10, 10);
+		std::cout << test << std::endl;
+		bad.signForm(test);
+		std::cout << test << std::endl;
+		bad.incr();
+		bad.signForm(test);
+		std::cout << test << std::endl;
+		bad.incr();
+		bad.signForm(test);
+		std::cout << test << std::endl;
 	}
 	catch (std::exception& e)
 	{

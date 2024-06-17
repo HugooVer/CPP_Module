@@ -5,6 +5,8 @@
 #include <iostream>
 #include <cstdlib>
 
+class Form;
+
 class Bureaucrat
 {
 protected:
