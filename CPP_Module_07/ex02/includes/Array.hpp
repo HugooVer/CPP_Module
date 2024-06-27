@@ -15,10 +15,10 @@ class Array
 		Array(Array const &array);
 		~Array();
 
-		Array& operator= (Array const &array);
 	public:
 		int size();
 
+		Array& operator= (Array const &array);
 		const Type & operator[](int Index) const
 		{
 			return Value[Index];
