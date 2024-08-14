@@ -10,8 +10,12 @@ template <class T>
 class Array
 {
 	private:
-		Array();
-		Array(unsigned int n);
+		Array() : T arr[];
+		Array(unsigned int n) : T arr[n]
+		{
+			for (unsigned int i = 0, i < n, ++i)
+				arr[i] = new T();
+		}
 		Array(Array const &array);
 		~Array();
 
