@@ -56,10 +56,10 @@ public:
 			arr[i] = T();
 	}
 
-	Array(Array const& other) : arr(new T[other._size]), _size(other._size)
+	Array(Array const& oldArray) : arr(new T[oldArray._size]), _size(oldArray._size)
 	{
 		for (unsigned int i = 0; i < _size; ++i)
-			arr[i] = other.arr[i];
+			arr[i] = oldArray.arr[i];
 	}
 
 	~Array()
@@ -67,14 +67,14 @@ public:
 		delete[] arr;
 	}
 
-	Array& operator=(Array const& other)
+	Array& operator=(Array const& oldArray)
 	{
-		if (this != &other) {
+		if (this != &oldArray) {
 			delete[] arr;
-			_size = other._size;
+			_size = oldArray._size;
 			arr = new T[_size];
 			for (unsigned int i = 0; i < _size; ++i)
-				arr[i] = other.arr[i];
+				arr[i] = oldArray.arr[i];
 		}
 		return *this;
 	}
