@@ -1,7 +1,6 @@
 #pragma once
 
 #include <iostream>
-#include <cstdlib>
 #include <exception>
 
 template <class T>

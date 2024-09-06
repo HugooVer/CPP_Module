@@ -1,10 +1,6 @@
 #pragma once
 
 #include <iostream>
-#include <cstdlib>
-#include <string>
-#include <sstream>
-#include <stdint.h>
 
 template <typename T> T max(T& x, T& y)
 {

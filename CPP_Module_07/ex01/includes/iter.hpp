@@ -1,10 +1,6 @@
 #pragma once
 
 #include <iostream>
-#include <cstdlib>
-#include <string>
-#include <sstream>
-#include <stdint.h>
 
 template <typename T, typename Y>
 void iter(T& ad, size_t len, Y& fun)
