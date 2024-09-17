@@ -16,6 +16,7 @@ vpath %.cpp ${SRCS_PATH}
 INCLUDES	= includes/
 
 HEADERS += Span.hpp
+HEADERS += LimitedMultiset.hpp
 
 vpath %.hpp ${INCLUDES}
 
