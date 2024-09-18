@@ -8,6 +8,8 @@ private:
 	std::size_t _max_size;
 
 public:
+	LimitedMultiset() : _max_size(0) {}
+
 	LimitedMultiset(std::size_t maxSize) : _max_size(maxSize) {}
 
 	LimitedMultiset(const LimitedMultiset& other) : std::multiset<T>(other), _max_size(other.max_size) {}
