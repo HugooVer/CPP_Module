@@ -9,15 +9,18 @@ Span::Span(int N) {
 }
 
 // Span::Span(const Span& other) {
-	
+// 	LimitedMultiset<int> mySpanO(other);
+
 // }
 
 // Span::Span& operator=(const Span& other){
-
+// 	if (this != &other)
+// 		LimitedMultiset<int>::operator=(other);
+// 	return *this;
 // }
 
 void addNumber(int nb){
-	mySpan.insert(nb);
+	.insert(nb);
 }
 
 // int shortestSpan() const{

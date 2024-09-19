@@ -8,6 +8,8 @@
 
 class Span
 {
+	
+
 	public:
 		Span();
 		Span(int N);
@@ -16,7 +18,7 @@ class Span
 
 		Span& operator=(const Span& other);
 
-		void addNumber(int nb);
+		void addNumber(int const nb);
 
 		int shortestSpan() const;
 		int longestSpan() const;
