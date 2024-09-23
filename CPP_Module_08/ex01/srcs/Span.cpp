@@ -29,3 +29,4 @@ void addNumber(int nb){
 // int longestSpan() const{
 
 // }
+// Befor changes
