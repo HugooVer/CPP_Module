@@ -1,17 +1,17 @@
 #include "Span.hpp"
 
 Span::Span() {
-	LimitedMultiset<int> mySpan;
+	mySpan = new LimitedMultiset<int>();
 }
 
 Span::Span(int N) {
-	LimitedMultiset<int> mySpan(N);
+	mySpan = new LimitedMultiset<int>(N);
 }
 
-// Span::Span(const Span& other) {
-// 	LimitedMultiset<int> mySpanO(other);
+Span::Span(const Span& other) {
+	mySpan = new LimitedMultiset<int> (other);
 
-// }
+}
 
 // Span::Span& operator=(const Span& other){
 // 	if (this != &other)
@@ -20,7 +20,7 @@ Span::Span(int N) {
 // }
 
 void addNumber(int nb){
-	.insert(nb);
+	mySpan.insert(nb);
 }
 
 // int shortestSpan() const{

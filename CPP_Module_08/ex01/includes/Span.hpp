@@ -8,8 +8,8 @@
 
 class Span
 {
-	
-
+	private:
+		std::multiset<int> *mySpan;
 	public:
 		Span();
 		Span(int N);
