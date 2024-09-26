@@ -1,25 +1,20 @@
 #include "Span.hpp"
 
-Span::Span() {
-	mySpan = new LimitedMultiset<int>();
+Span::Span() : mySpan(0) {
+	std::cout << "Span Default Constructor Called" << std::endl;
 }
 
-Span::Span(int N) {
-	mySpan = new LimitedMultiset<int>(N);
+Span::Span(int N) : mySpan(N) {
+	std::cout << "Span Constructor with Size Called: Max size = " << N << std::endl;
 }
 
-Span::Span(const Span& other) {
-	mySpan = new LimitedMultiset<int> (other);
+Span::Span(const Span& other) : mySpan(other.mySpan) {
+	std::cout << "Span Copy Constructor Called" << std::endl;
+	}
 
-}
+Span::~Span(){}
 
-// Span::Span& operator=(const Span& other){
-// 	if (this != &other)
-// 		LimitedMultiset<int>::operator=(other);
-// 	return *this;
-// }
-
-void addNumber(int nb){
+void Span::addNumber(int nb){
 	mySpan.insert(nb);
 }
 
@@ -29,4 +24,3 @@ void addNumber(int nb){
 // int longestSpan() const{
 
 // }
-// Befor changes

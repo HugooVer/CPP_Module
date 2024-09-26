@@ -12,12 +12,12 @@ template <typename T> class LimitedMultiset : public std::multiset<T> {
 
 		LimitedMultiset(std::size_t maxSize) : _max_size(maxSize) {}
 
-		LimitedMultiset(const LimitedMultiset& other) : std::multiset<T>(other), _max_size(other.max_size()) {}
+		LimitedMultiset(const LimitedMultiset& other) : std::multiset<T>(other), _max_size(other._max_size) {}
 
 		LimitedMultiset& operator=(const LimitedMultiset& other) {
 			if (this != &other) {
 				std::multiset<T>::operator=(other);
-				_max_size = other.max_size;
+				_max_size = other._max_size;
 			}
 			return *this;
 		}

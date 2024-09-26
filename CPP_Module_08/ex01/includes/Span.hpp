@@ -9,7 +9,8 @@
 class Span
 {
 	private:
-		std::multiset<int> *mySpan;
+		LimitedMultiset<int> mySpan;
+		int N;
 	public:
 		Span();
 		Span(int N);
