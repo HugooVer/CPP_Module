@@ -1,14 +1,13 @@
 #include <iostream>
 #include <Span.hpp>
 int main() {
-	Span c2(3);
-	c2.addNumber(10);
-	c2.addNumber(20);
-	Span c3(c2);
-	Span c4 = c2;
+	Span sp(5);
+	sp.addNumber(20);
+	sp.addNumber(10);
+	sp.addNumber(50);
+	sp.addNumber(100);
+	sp.addNumber(20);
 
-	c4.addNumber(30);
-
-
+	std::cout << sp.longestSpan() << std::endl;
 	return 0;
 }
