@@ -4,11 +4,11 @@ int main() {
 	try
 	{
 	Span sp(5);
-	sp.addNumber(2);
-	sp.addNumber(20);
-	sp.addNumber(50);
-	sp.addNumber(100);
-	sp.addNumber(20);
+	sp.addNumber(502);
+	sp.addNumber(501);
+	// sp.addNumber(20);
+	// sp.addNumber(20);
+	// sp.addNumber(2000);
 
 	std::cout << sp.shortestSpan() << std::endl;
 	// std::cout << sp.longestSpan() << std::endl;

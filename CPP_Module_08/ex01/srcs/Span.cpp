@@ -18,19 +18,24 @@ void Span::addNumber(int nb){
 	mySpan.insert(nb);
 }
 
-int Span::shortestSpan() const{
+int Span::shortestSpan() const {
 	if (mySpan.size() < 2)
 		throw std::length_error("Span have less than 2 int");
 
-	std::multiset<int>::iterator prev = mySpan.end();
+	std::multiset<int>::iterator prev = --mySpan.end();
+	std::cout << *prev <<std::endl;
+	long long min_span = *prev;
 	for (std::multiset<int>::iterator it = mySpan.begin(); it != mySpan.end(); ++it) {
-		if (prev != mySpan.end() && *prev == *it)
+		unsigned int span = *it - *prev;
+		if (span < min_span)
+			min_span = span;
+		if (min_span == 0)
 			return 0;
 		prev = it;
 	}
-
-	return -1;
+	return min_span;
 }
+
 int Span::longestSpan() const{
 	if (mySpan.size() < 2)
 		throw std::length_error("Span have less than 2 int");
