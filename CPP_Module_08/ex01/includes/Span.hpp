@@ -24,4 +24,8 @@ class Span
 		int shortestSpan() const;
 		int longestSpan() const;
 
+		std::size_t max_size() const {
+			return mySpan.max_size();
+		}
+
 };

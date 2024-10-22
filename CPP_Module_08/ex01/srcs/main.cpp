@@ -1,17 +1,26 @@
-#include <iostream>
 #include <Span.hpp>
+#include <time.h>
+#include <stdlib.h>
+
 int main() {
 	try
 	{
-	Span sp(5);
-	sp.addNumber(502);
-	sp.addNumber(501);
+	Span sp(5000);
+	// sp.addNumber(502);
+	// sp.addNumber(501);
 	// sp.addNumber(20);
 	// sp.addNumber(20);
 	// sp.addNumber(2000);
 
-	std::cout << sp.shortestSpan() << std::endl;
-	// std::cout << sp.longestSpan() << std::endl;
+	srand(time(NULL));
+	for (std::size_t idx = 0; idx < sp.max_size(); ++idx)
+	{
+		std::cout << idx << std::endl;
+		sp.addNumber(rand() % 250);
+	}
+
+	std::cout << "Shortest Span :" << sp.shortestSpan() << std::endl;
+	std::cout << "Longest Span :" << sp.longestSpan() << std::endl;
 	}
 	catch (std::exception& e)
 	{
