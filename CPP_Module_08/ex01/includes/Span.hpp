@@ -3,6 +3,8 @@
 #include <iostream>
 #include <exception>
 #include <list>
+#include <time.h>
+#include <stdlib.h>
 
 #include "LimitedMultiset.hpp"
 
@@ -26,6 +28,12 @@ class Span
 
 		std::size_t max_size() const {
 			return mySpan.max_size();
+		}
+
+		void  fill_it(int max_int){
+			srand(time(NULL));
+			for (std::size_t idx = 0; idx < this->max_size(); ++idx)
+				this->addNumber(rand() % max_int);
 		}
 
 };
