@@ -27,8 +27,9 @@ template <typename T> class LimitedMultiset : public std::multiset<T> {
 				typename std::multiset<T>::iterator it = std::multiset<T>::insert(value);
 				return std::make_pair(it, true);
 			} else {
-				std::cout << "Error: Insertion failed: maximum size reached" << std::endl;
-				return std::make_pair(this->end(), false);
+				// std::cout << "Error: Insertion failed: maximum size reached" << std::endl;
+				throw std::out_of_range ("Error: Insertion failed: maximum size reached");
+				// return std::make_pair(this->end(), false);
 			}
 		}
 

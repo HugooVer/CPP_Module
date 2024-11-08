@@ -5,11 +5,11 @@ Span::Span() : mySpan(0) {
 }
 
 Span::Span(int N) : mySpan(N) {
-	std::cout << "Span Constructor with Size Called: Max size = " << N << std::endl;
+	// std::cout << "Span Constructor with Size Called: Max size = " << N << std::endl;
 }
 
 Span::Span(const Span& other) : mySpan(other.mySpan) {
-	std::cout << "Span Copy Constructor Called" << std::endl;
+	// std::cout << "Span Copy Constructor Called" << std::endl;
 }
 
 Span::~Span(){}
@@ -58,7 +58,7 @@ void Span::fill_it(int max_int){
 }
 void Span::show_it(){
 	std::multiset<int>::iterator it;
-	std::cout << std::endl << "Elements of the Multiset : ";
+	std::cout << "	Elements of the Multiset : ";
 	for (it = this->begin(); it != this->end(); it++)
 		std::cout << *it << " ";
 	std::cout << std::endl;
