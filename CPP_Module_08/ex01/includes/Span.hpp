@@ -22,18 +22,16 @@ class Span
 		Span& operator=(const Span& other);
 
 		void addNumber(int const nb);
+		void  fill_it(int max_int);
 
 		int shortestSpan() const;
 		int longestSpan() const;
 
-		std::size_t max_size() const {
-			return mySpan.max_size();
-		}
+		std::size_t max_size() const;
+		std::multiset<int>::iterator begin() const;
+		std::multiset<int>::iterator end() const;
+		
+		
 
-		void  fill_it(int max_int){
-			srand(time(NULL));
-			for (std::size_t idx = 0; idx < this->max_size(); ++idx)
-				this->addNumber(rand() % max_int);
-		}
 
 };

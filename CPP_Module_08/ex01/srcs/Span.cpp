@@ -40,3 +40,19 @@ int Span::longestSpan() const{
 		throw std::length_error("Span have less than 2 int");
 	return (*mySpan.rbegin() - *mySpan.begin());
 }
+
+std::size_t Span::max_size() const {
+	return mySpan.max_size();
+}
+std::multiset<int>::iterator Span::begin() const{
+	return mySpan.begin();
+}
+std::multiset<int>::iterator Span::end() const{
+	return mySpan.end();
+}
+
+void Span::fill_it(int max_int){
+	srand(time(NULL));
+	for (std::size_t idx = 0; idx < this->max_size(); ++idx)
+		this->addNumber(rand() % (max_int + 1));
+}
