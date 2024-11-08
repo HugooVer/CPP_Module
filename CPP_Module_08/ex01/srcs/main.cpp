@@ -7,17 +7,12 @@ int main() {
 	{
 	Span sp(10);
 
-	sp.fill_it(5);
+	sp.fill_it(20);
 
 	std::cout << "Shortest Span :" << sp.shortestSpan() << std::endl;
 	std::cout << "Longest Span :" << sp.longestSpan() << std::endl;
-
-	std::multiset<int>::iterator it;
-	std::cout << "\nElements of the Multiset : ";
-	for (it = sp.begin(); it != sp.end(); it++)
-	    std::cout << *it << " ";
-	std::cout << std::endl;
-
+	sp.show_it();
+	
 	}
 	catch (std::exception& e)
 	{

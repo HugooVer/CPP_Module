@@ -22,7 +22,8 @@ class Span
 		Span& operator=(const Span& other);
 
 		void addNumber(int const nb);
-		void  fill_it(int max_int);
+		void fill_it(int max_int);
+		void show_it();
 
 		int shortestSpan() const;
 		int longestSpan() const;

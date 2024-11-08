@@ -56,3 +56,10 @@ void Span::fill_it(int max_int){
 	for (std::size_t idx = 0; idx < this->max_size(); ++idx)
 		this->addNumber(rand() % (max_int + 1));
 }
+void Span::show_it(){
+	std::multiset<int>::iterator it;
+	std::cout << std::endl << "Elements of the Multiset : ";
+	for (it = this->begin(); it != this->end(); it++)
+		std::cout << *it << " ";
+	std::cout << std::endl;
+}
