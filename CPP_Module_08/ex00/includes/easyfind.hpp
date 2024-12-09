@@ -1,7 +1,6 @@
 #pragma once
 
 #include <iostream>
-#include <exception>
 #include <list>
 
 template <typename T>int easyfind(T& intCont, int look)

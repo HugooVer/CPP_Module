@@ -20,9 +20,9 @@ int main() {
 	}
 
 	try {
-	std::cout << std::endl << "Sall auto test :" << std::endl;
+	std::cout << std::endl << "Small auto test :" << std::endl;
 	Span sp(20);
-	sp.fill_it(10000);
+	sp.fill_it(4000);
 	std::cout << "	Shortest Span : " << sp.shortestSpan() << std::endl;
 	std::cout << "	Longest Span : " << sp.longestSpan() << std::endl;
 	sp.show_it();

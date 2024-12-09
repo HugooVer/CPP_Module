@@ -1,11 +1,10 @@
 #include "easyfind.hpp"
 
-#include <iostream>
 #include <time.h>
 #include <cstdlib>
-#include <list>
 #include <vector>
 #include <deque>
+#include <algorithm>
 
 template <typename T> void printIntContInOrder(T& intCont) {
 	for (typename T::const_iterator it = intCont.begin(); it != intCont.end(); ++it) {
@@ -14,16 +13,21 @@ template <typename T> void printIntContInOrder(T& intCont) {
 	std::cout << '\n';
 }
 
-template <typename T> void feelIntCont (T& intCont) {
-	for (int i=1; i<=10; ++i)
-		intCont.push_back((rand() % 10));
+template <typename T> void feelIntCont(T& intCont) {
+	for (int i = 1; i <= 20; ++i) {
+		int num = rand() % 25;
+		if (std::find(intCont.begin(), intCont.end(), num) == intCont.end()) {
+			intCont.push_back(num);
+		}
+		else
+			--i;
+	}
 }
 
 int main ()
 {
-
 	srand(time(NULL));
-	int i = rand() % 10;
+	int i = rand() % 25;
 	std::list<int> lst;
 	std::vector<int> vec;
 	std::deque<int> deq;

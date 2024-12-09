@@ -50,11 +50,26 @@ std::multiset<int>::iterator Span::begin() const{
 std::multiset<int>::iterator Span::end() const{
 	return mySpan.end();
 }
+std::multiset<int>::size_type Span::count(std::multiset<int>::size_type i) const{
+	return mySpan.count(i);
+}
+std::multiset<int>::size_type Span::size() const{
+	return mySpan.size();
+}
 
-void Span::fill_it(int max_int){
+// void Span::fill_it(int max_int){
+// 	srand(time(NULL));
+// 	for (std::size_t idx = 0; idx < this->max_size(); ++idx)
+// 		this->addNumber(rand() % (max_int + 1));
+// }
+
+void Span::fill_it(int max_int) {
 	srand(time(NULL));
-	for (std::size_t idx = 0; idx < this->max_size(); ++idx)
-		this->addNumber(rand() % (max_int + 1));
+	while (this->size() < this->max_size()) {
+		int num = rand() % (max_int + 1);
+		if (this->count(num) == 0)
+			this->addNumber(num);
+	}
 }
 void Span::show_it(){
 	std::multiset<int>::iterator it;

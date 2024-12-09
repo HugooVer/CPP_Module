@@ -31,8 +31,6 @@ class Span
 		std::size_t max_size() const;
 		std::multiset<int>::iterator begin() const;
 		std::multiset<int>::iterator end() const;
-		
-		
-
-
+		std::multiset<int>::size_type count(std::multiset<int>::size_type i) const;
+		std::multiset<int>::size_type size() const;
 };
