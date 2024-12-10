@@ -5,14 +5,12 @@
 
 template <typename T>int easyfind(T& intCont, int look)
 {
-	int pos = -1;
-	int ii = intCont.size() - 1;
+	int pos = 0;
 
-	for (typename T::reverse_iterator rit = intCont.rbegin(); rit != intCont.rend(); ++rit)
-	{
-		if (*rit == look)
-			pos = ii;
-		--ii;
+	for (typename T::iterator it = intCont.begin(); it != intCont.end(); ++it) {
+		if (*it == look)
+			return pos;
+		++pos;
 	}
-	return pos;
+	return -1;
 }
