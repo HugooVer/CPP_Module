@@ -1,4 +1,4 @@
-NAME = btc
+NAME = RPN
 
 CXX = c++
 CXXFLAGS += -Wall
@@ -9,15 +9,14 @@ CXXFLAGS += -std=c++98
 SRCS_PATH = srcs/
 
 SRCS += main.cpp
-SRCS += BitcoinExchange.cpp
-SRCS += Date.cpp
+SRCS += RPN.cpp
+
 
 vpath %.cpp ${SRCS_PATH}
 
 INCLUDES	= includes/
 
-HEADERS += BitcoinExchange.hpp
-HEADERS += Date.hpp
+HEADERS += RPN.hpp
 
 vpath %.hpp ${INCLUDES}
 
